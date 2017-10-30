@@ -1,0 +1,10 @@
+var gulp = require('gulp');
+var ghPages = require('gulp-gh-pages');
+ 
+gulp.task('deploy', function() {
+	return gulp.src('./dist/**/*')
+	.pipe(ghPages({
+		branch: 'master',
+		remoteUrl: 'git@github.com/kresimir-coko/research'
+	}));
+});
